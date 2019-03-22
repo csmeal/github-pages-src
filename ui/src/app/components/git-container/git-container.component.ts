@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GitProject } from '../../models';
-import { GitService } from '../../services';
+import { IGitService } from '../../services';
 
 @Component({
   selector: 'app-git-container',
@@ -10,7 +10,11 @@ import { GitService } from '../../services';
 export class GitContainerComponent implements OnInit {
   projects: GitProject[];
 
-  constructor(private gitService: GitService) {}
+  constructor(private gitService: IGitService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.projects = this.gitService.getProjects();
+    console.log(this.gitService);
+    console.log(this.projects);
+  }
 }

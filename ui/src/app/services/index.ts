@@ -1,1 +1,1 @@
-export * from './git.service';
+export * from './git';
