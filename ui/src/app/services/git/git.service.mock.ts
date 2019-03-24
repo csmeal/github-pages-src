@@ -1,6 +1,7 @@
 import { IGitService } from './git.service.interface';
 import { GitProject } from '../../models';
 import { Injectable } from '@angular/core';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +32,7 @@ export class MockGitService implements IGitService {
     ];
   }
 
-  getProjects(): GitProject[] {
-    return this.projects;
+  async getProjects(): Promise<GitProject[]> {
+    return Promise.resolve(this.projects);
   }
 }

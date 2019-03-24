@@ -1,5 +1,5 @@
 import { GitProject } from '../../models';
 
 export abstract class IGitService {
-  abstract getProjects(): GitProject[];
+  abstract async getProjects(): Promise<GitProject[]>;
 }

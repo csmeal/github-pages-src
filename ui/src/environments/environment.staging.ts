@@ -1,6 +1,6 @@
 import { GitService } from '../app/services/git';
 
 export const environment = {
-  production: true,
+  production: false,
   gitService: GitService
 };

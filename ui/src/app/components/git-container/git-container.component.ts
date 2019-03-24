@@ -12,8 +12,8 @@ export class GitContainerComponent implements OnInit {
 
   constructor(private gitService: IGitService) {}
 
-  ngOnInit() {
-    this.projects = this.gitService.getProjects();
+  async ngOnInit() {
+    this.projects = await this.gitService.getProjects();
     console.log(this.gitService);
     console.log(this.projects);
   }
